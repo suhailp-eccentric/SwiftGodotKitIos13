@@ -27,6 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 #endif
 
 @main
+@available(iOS 14.0, *)
 struct testAppkitUIApp: App {
     #if os(macOS)
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
@@ -34,7 +35,11 @@ struct testAppkitUIApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if #available(iOS 17.0, *) {
+                ContentView()
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
 }

@@ -5,6 +5,7 @@ import SwiftGodotKit
 import SwiftUI
 
 @Godot
+@available(iOS 17.0, *)
 class SpinningCube: Node3D {
     public override func _ready() {
         let meshRender = MeshInstance3D()
@@ -31,6 +32,7 @@ class SpinningCube: Node3D {
     }
 }
 
+@available(iOS 17.0, *)
 struct ContentView: View {
     init() {
         initHookCb = { level in
@@ -128,5 +130,9 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    if #available(iOS 17.0, *) {
+        ContentView()
+    } else {
+        // Fallback on earlier versions
+    }
 }

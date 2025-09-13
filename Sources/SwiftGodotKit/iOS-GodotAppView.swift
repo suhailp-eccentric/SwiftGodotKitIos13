@@ -8,6 +8,7 @@ import SwiftUI
 import SwiftGodot
 
 #if os(iOS)
+@available(iOS 17.0, *)
 public struct GodotAppView: UIViewRepresentable {
     @SwiftUI.Environment(\.godotApp) var app: GodotApp?
     var view = UIGodotAppView(frame: CGRect.zero)
@@ -32,9 +33,12 @@ public struct GodotAppView: UIViewRepresentable {
     }
 }
 
+@available(iOS 17.0, *)
 typealias TTGodotAppView = UIGodotAppView
+@available(iOS 17.0, *)
 typealias TTGodotWindow = UIGodotWindow
 
+@available(iOS 17.0, *)
 public class UIGodotAppView: UIView {
     public var renderingLayer: CAMetalLayer? = nil
     private var displayLink : CADisplayLink? = nil

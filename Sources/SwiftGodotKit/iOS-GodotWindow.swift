@@ -8,6 +8,7 @@ import OSLog
 import SwiftUI
 import SwiftGodot
 
+@available(iOS 17.0, *)
 public struct GodotWindow: UIViewRepresentable {
     @State var node: String?
     @SwiftUI.Environment(\.godotApp) var app: GodotApp?
@@ -37,6 +38,7 @@ public struct GodotWindow: UIViewRepresentable {
     }
 }
 
+@available(iOS 17.0, *)
 public class UIGodotWindow: UIView {
     public var windowLayer: CAMetalLayer?
     private var embedded: DisplayServerEmbedded?

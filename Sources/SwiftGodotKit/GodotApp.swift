@@ -7,6 +7,7 @@ import SwiftUI
 import SwiftGodot
 
 /// You create a single Godot App per application, this contains your game PCK
+@available(iOS 17.0, *)
 @Observable
 public class GodotApp: ObservableObject {
     let path: String
@@ -145,6 +146,8 @@ public class GodotApp: ObservableObject {
     #endif
 }
 
+@available(iOS 17.0, *)
 public extension EnvironmentValues {
+    @available(iOS 17.0, *)
     @Entry var godotApp: GodotApp? = nil
 }

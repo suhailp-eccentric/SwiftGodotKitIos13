@@ -11,17 +11,22 @@ import QuartzCore
 @_implementationOnly import GDExtension
 import os
 
+@available(iOS 17.0, *)
 public var initHookCb: ((GDExtension.InitializationLevel) -> ())?
+@available(iOS 17.0, *)
 public var deinitHookCb: ((GDExtension.InitializationLevel) -> ())?
 
+@available(iOS 17.0, *)
 let logger = Logger(subsystem: "io.github.migueldeicaza.swiftgodotkit", category: "general")
 
+@available(iOS 17.0, *)
 extension GDExtension.InitializationLevel {
     init<T : BinaryInteger>(integerValue: T) {
         self = .init(rawValue: RawValue(integerValue))!
     }
 }
 
+@available(iOS 17.0, *)
 func embeddedExtensionInit (userData: UnsafeMutableRawPointer?, l: GDExtensionInitializationLevel) {
     let level = GDExtension.InitializationLevel(integerValue: l.rawValue)
     print ("SwiftEmbed: Register our types here, level: \(level)")
@@ -30,6 +35,7 @@ func embeddedExtensionInit (userData: UnsafeMutableRawPointer?, l: GDExtensionIn
     }
 }
 
+@available(iOS 17.0, *)
 func embeddedExtensionDeinit (userData: UnsafeMutableRawPointer?, l: GDExtensionInitializationLevel) {
     if let cb = deinitHookCb {
         cb (GDExtension.InitializationLevel(integerValue: l.rawValue))
@@ -61,6 +67,7 @@ func withUnsafePtr (strings: [String], callback: (UnsafeMutablePointer<UnsafeMut
 //                    let bit = unsafeBitCast(godotGetProcAddr, to: OpaquePointer.self)
 // setExtensionInterface(to: bit, library: OpaquePointer (libraryPtr!))
 
+@available(iOS 17.0, *)
 class EmbeddedExtensionInterface: ExtensionInterface {
     func variantShouldDeinit(content: UnsafeRawPointer) -> Bool {
         return true
@@ -107,6 +114,7 @@ class EmbeddedExtensionInterface: ExtensionInterface {
     }
 }
 
+@available(iOS 17.0, *)
 extension GodotInstance {
     public static func create(args: [String]) -> GodotInstance? {
         var instance: UnsafeMutableRawPointer? = nil
