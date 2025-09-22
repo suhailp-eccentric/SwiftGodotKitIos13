@@ -57,8 +57,8 @@ let package = Package(
             checksum: "652f731db8ce584af743c6957f75d0f90e7575e363eaee481cb43f4e0ccf8dce"),
         .binaryTarget(
             name: "ios_libgodot",
-            url: "https://github.com/migueldeicaza/SwiftGodotKit/releases/download/0.60.2/ios_libgodot.xcframework.zip",
-            checksum: "9a97f2189f6242695817af8480861e04121f9c3e043a9690a9396bb48c6142e4"),
+            url: "https://github.com/suhailp-eccentric/SwiftGodotKitIos13/releases/download/1.0.1/ios_libgodot.xcframework.zip",
+            checksum: "e7df70b7c8dc107b7a46a525274d13b1c0e404bca9034f5b4d17ad2ecf83c84b"),
 
 
         // Use these for local developoment.
