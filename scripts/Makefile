@@ -1,2 +1,2 @@
 all:
-	bash -x make-libgodot.xcframework ~/cvs/SwiftGodot ~/cvs/libgodot_project/godot .
+	bash -x make-ios-libgodot.xcframework ../../SwiftGodot ../../libgodot .

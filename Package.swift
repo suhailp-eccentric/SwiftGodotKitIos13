@@ -65,8 +65,8 @@ let package = Package(
 //        .binaryTarget(name: "MoltenVK", path: "build/MoltenVK.xcframework"),
 //        .binaryTarget(name: "mac_libgodot",
 //                      path: "build/mac/libgodot.xcframework"),
-//        .binaryTarget(name: "ios_libgodot",
-//                      path: "build/ios/libgodot.xcframework"),
+    //    .binaryTarget(name: "ios_libgodot",
+    //                  path: "scripts/ios/libgodot.xcframework"),
 //
         .systemLibrary(
             name: "libgodot"
